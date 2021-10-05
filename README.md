@@ -9,14 +9,17 @@ Providing net global tool in order to query salesforce
 >
 > The tool is based on multiple sub commmands :
 > - Use sub command `List` to list salesforce objects/fields
-> - Use sub command `Query` to run queries on salesforce
+> - Use sub command `Query` to run salesforce queries
+> - Use sub command `Generate` to generate salesforce queries
 >
 >
 > To run code in debug or release mode, type the following commands in your favorite terminal : 
 > - `.\App.exe List`
 > - `.\App.exe List -m 100`
 > - `.\App.exe List -p [pattern]`
+> - `.\App.exe List -n [ObjectName]`
 > - `.\App.exe Query -f [FileName]`
+> - `.\App.exe Generate -n [ObjectName]`
 >
 >
 > To install, run, update, uninstall global tool from a local source path, type commands :
@@ -26,7 +29,9 @@ Providing net global tool in order to query salesforce
 > - `SalesForceCli List`
 > - `SalesForceCli List -m 100`
 > - `SalesForceCli List -p [pattern]`
+> - `SalesForceCli List -n [ObjectName]`
 > - `SalesForceCli Query -f [FileName]`
+> - `SalesForceCli Generate -n [ObjectName]`
 > - `dotnet tool update -g SalesForceCli --ignore-failed-sources`
 > - `dotnet tool uninstall -g SalesForceCli`
 >

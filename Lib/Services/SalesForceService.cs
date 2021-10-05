@@ -24,17 +24,10 @@ namespace Lib.Services
             _fileHelper = fileHelper;
         }
 
-        public async Task<ICollection<T>> RunQueryAsync<T>(string query, CancellationToken cancellationToken = default)
+        public async Task<string> GetQueryAsync(SalesForceParameters parameters, CancellationToken cancellationToken = default)
         {
-            using var authenticationClient = await GetAuthenticationClientAsync();
-            using var forceClient = GetForceClient(authenticationClient);
-            var result = await forceClient.QueryAsync<T>(query);
-            var objects = result.Records;
-            return objects;
-        }
-
-        public async Task<string> GetQueryAsync(string objectName, int maxItems, CancellationToken cancellationToken = default)
-        {
+            var maxItems = parameters.MaxItems;
+            var objectName = parameters.ObjectName;
             using var authenticationClient = await GetAuthenticationClientAsync();
             using var forceClient = GetForceClient(authenticationClient);
             var fields = await forceClient.GetFieldsCommaSeparatedListAsync(objectName);

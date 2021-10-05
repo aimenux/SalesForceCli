@@ -8,7 +8,7 @@ using McMaster.Extensions.CommandLineUtils;
 namespace App.Commands
 {
     [Command(Name = "SalesForceCli", FullName = "List/Query objects on SalesForce", Description = "List/Query objects on SalesForce.")]
-    [Subcommand(typeof(ListCommand), typeof(QueryCommand))]
+    [Subcommand(typeof(ListCommand), typeof(QueryCommand), typeof(GenerateCommand))]
     [VersionOptionFromMember(MemberName = nameof(GetVersion))]
     public class MainCommand : AbstractCommand
     {

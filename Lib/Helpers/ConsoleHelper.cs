@@ -14,7 +14,19 @@ namespace Lib.Helpers
         public void RenderTitle(string text)
         {
             AnsiConsole.WriteLine();
-            AnsiConsole.Render(new FigletText(text).LeftAligned());
+            AnsiConsole.Write(new FigletText(text).LeftAligned());
+            AnsiConsole.WriteLine();
+        }
+
+        public void RenderQuery(string objectName, string query)
+        {
+            AnsiConsole.WriteLine();
+            AnsiConsole.Write(
+                new Panel(new Text(query).LeftAligned())
+                    .Expand()
+                    .Padding(1, 1)
+                    .SquareBorder()
+                    .Header($"[u][b][yellow]{objectName.ToUpper()}[/][/][/]"));
             AnsiConsole.WriteLine();
         }
 
@@ -29,9 +41,9 @@ namespace Lib.Helpers
             footer.Centered();
 
             AnsiConsole.WriteLine();
-            AnsiConsole.Render(header);
+            AnsiConsole.Write(header);
             AnsiConsole.WriteLine(formattedJson);
-            AnsiConsole.Render(footer);
+            AnsiConsole.Write(footer);
             AnsiConsole.WriteLine();
         }
 
@@ -54,7 +66,7 @@ namespace Lib.Helpers
             }
 
             AnsiConsole.WriteLine();
-            AnsiConsole.Render(table);
+            AnsiConsole.Write(table);
             AnsiConsole.WriteLine();
         }
 
@@ -78,7 +90,7 @@ namespace Lib.Helpers
             table.AddRow(inputFileMarkup, outputFileMarkup);
 
             AnsiConsole.WriteLine();
-            AnsiConsole.Render(table);
+            AnsiConsole.Write(table);
             AnsiConsole.WriteLine();
         }
 
@@ -102,7 +114,7 @@ namespace Lib.Helpers
             }
 
             AnsiConsole.WriteLine();
-            AnsiConsole.Render(table);
+            AnsiConsole.Write(table);
             AnsiConsole.WriteLine();
         }
 

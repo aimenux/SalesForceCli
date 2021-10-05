@@ -9,6 +9,8 @@ namespace Lib.Helpers
     {
         void RenderTitle(string text);
 
+        void RenderQuery(string objectName, string query);
+
         void RenderSettingsFile(string filepath);
 
         void RenderSalesForceFields(ICollection<string> fields, string caption = null);

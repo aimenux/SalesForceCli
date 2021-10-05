@@ -6,7 +6,7 @@ namespace Lib.Services
 {
     public interface ISalesForceService
     {
-        Task<string> GetQueryAsync(string objectName, int maxItems, CancellationToken cancellationToken = default);
+        Task<string> GetQueryAsync(SalesForceParameters parameters, CancellationToken cancellationToken = default);
 
         Task<SalesForceResults<T>> RunQueryAsync<T>(SalesForceParameters parameters, CancellationToken cancellationToken = default);
 
