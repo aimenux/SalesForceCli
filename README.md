@@ -1,3 +1,5 @@
+[![.NET](https://github.com/aimenux/SalesForceCli/actions/workflows/ci.yml/badge.svg)](https://github.com/aimenux/SalesForceCli/actions/workflows/ci.yml)
+
 # SalesForceCli
 ```
 Providing net global tool in order to query salesforce
@@ -33,9 +35,7 @@ Providing net global tool in order to query salesforce
 > - For prerelease version : `dotnet tool install -g SalesForceCli --version "*-*" --ignore-failed-sources`
 >
 >
-> ![ListCommand](Screenshots/ListCommand.png)
->
-> ![QueryCommand](Screenshots/QueryCommand.png)
+> ![SalesForceCli](Screenshots/SalesForceCli.png)
 >
 
 **`Tools`** : vs19, net 5.0, salesforce-sdk, command-line, spectre-console
