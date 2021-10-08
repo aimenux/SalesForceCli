@@ -1,5 +1,7 @@
 ﻿using System.IO;
+using Lib.Extensions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Lib.Helpers
 {
@@ -7,8 +9,18 @@ namespace Lib.Helpers
     {
         public void WriteToFile<T>(string filepath, T content)
         {
-            var json = JsonConvert.SerializeObject(content, Formatting.Indented);
+            var json = Serialize(content, Formatting.Indented);
             File.WriteAllText(filepath, json);
+        }
+
+        private static string Serialize<T>(T content, Formatting formatting)
+        {
+            const string name = "attributes";
+            var json = JsonConvert.SerializeObject(content);
+            var obj = JArray.Parse(json);
+            var tokens = obj.FindTokens(name);
+            tokens.ForEach(x => x?.Parent?.Remove());
+            return JsonConvert.SerializeObject(obj, formatting);
         }
     }
 }
