@@ -43,4 +43,4 @@ Providing net global tool in order to query salesforce
 > ![SalesForceCli](Screenshots/SalesForceCli.png)
 >
 
-**`Tools`** : vs19, net 5.0, salesforce-sdk, command-line, spectre-console
+**`Tools`** : vs22, net 6.0, salesforce-sdk, command-line, spectre-console
